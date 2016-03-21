@@ -1,7 +1,7 @@
 public class phonenum {
-public static void main(String[] ars) {
-	String[] args=new String[1];
-	args[0]=(ars==null||ars.length!=1)?"+1237167489345":"0"; 
+public static void main(String[] args) {
+	//String[] args=new String[1];
+	//Enter the phone number as the first argument
 	if (args.length!=1 || args[0]==null || args[0].length()<10)
 	{
 		System.err.print("Usage: java phonenum <phonenumber>: Not a phonenumber");
