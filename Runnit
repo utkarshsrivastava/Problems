@@ -1,0 +1,64 @@
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map.Entry;
+import java.util.Stack;
+
+public class Runnit {
+
+}
+//'/this is a switch case problem... consider first reject.. then sort '
+
+
+interface ScannerAndSorter {
+	// Read and scan another item; return false when there are no more
+	// items.
+	boolean nextItem();
+
+	// Percentage (0-100) of the current item that's red.
+	double redPercentage();
+
+	// Percentage (0-100) of the current item that's green.
+	double greenPercentage();
+
+	// Send the current item to the Red bin
+	void sendToRed();
+
+	// Send the current item to the Green bin
+	void sendToGreen();
+
+	// Send the current item to the Reject bin
+	void reject();
+}
+
+class DecorationSorter {
+	ScannerAndSorter sorter;
+
+	public DecorationSorter(ScannerAndSorter sorter) {
+		this.sorter = sorter;
+	}
+
+	// Sort the decorations that 'sorter' reads.
+	void sort() {
+	//	... fill this in ...
+	//how do I get teh next item? where is the reader in the interface that returns the next item???  
+	if (sorter==null || sorter.nextItem()==false) 
+	return ;
+	    while(sorter.nextItem())
+	    {
+	        /*Red, if the decoration is more than 35% red
+Green, if the decoration is more than 30% green
+Reject, if the decoration is both more than 35% red and 30% green - these are just too "loud". 
+*/
+	        //ScannerAndSorter item=sorter.read();
+	        if (sorter.redPercentage()>35.00)
+	            if (sorter.greenPercentage()>30)
+	            sorter.reject();
+	            else
+	            sorter.sendToRed();
+	       else if (sorter.greenPercentage()>30)
+	            sorter.sendToGreen();
+	    }
+	    
+	}
+}
