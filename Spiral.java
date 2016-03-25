@@ -11,6 +11,7 @@ public static void main(String[] args) {
 	int y_dim=in.hasNextInt()?in.nextInt():0;
 	int arr[][]=new int[x_dim][y_dim];
 //	int arr[][]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+
 	for(int indx=0;indx<x_dim;indx++)
 		for(int indx2=0;indx2<y_dim;indx2++)
 			arr[indx][indx2]=in.nextInt();
