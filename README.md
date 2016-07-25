@@ -1,2 +1,2 @@
 # Problems
-Some puzzle solving in java and scripting
+Some basic puzzle solving in java
